@@ -32,6 +32,12 @@ class TC_MyTest < Test::Unit::TestCase
 			bowling.Throws('X0540000000000000000')
 			assert_equal(28, bowling.Score, 'Strike')
 		end
+		
+		def test_AllStrikesPerfectGame()
+			bowling = Bowling.new
+			bowling.Throws('X0X0X0X0X0X0X0X0X0XXX')
+			assert_equal(300, bowling.Score, 'Perfect Game')
+		end
 end
 
 Test::Unit::UI::Console::TestRunner.run(TC_MyTest)
